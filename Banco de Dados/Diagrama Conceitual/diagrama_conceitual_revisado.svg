@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1450" viewBox="0 0 2000 1450" role="img" aria-labelledby="title desc">
+<title id="title">Modelo conceitual revisado — Sistema de Agendamento de Clínica</title>
+<desc id="desc">Modelo conceitual com Clínica, Médico, Paciente, Consulta, Especialidade e Contrato, alinhado à implementação no Supabase.</desc>
+<rect width="2000" height="1450" fill="#f5f8fc"/>
+<text x="80" y="78" font-family="Arial,sans-serif" font-size="38" font-weight="700" fill="#16324f">Modelo conceitual — Sistema de Agendamento de Clínica</text>
+<text x="80" y="122" font-family="Arial,sans-serif" font-size="19" fill="#52677f">Versão revisada • alinhada às entidades e aos relacionamentos implementados no Supabase</text>
+<defs>
+<style>
+.entity{fill:#fff;stroke:#476581;stroke-width:3;rx:18}
+.header{fill:#16324f}
+.htext{font:700 25px Arial,sans-serif;fill:#fff}
+.attr{font:19px Arial,sans-serif;fill:#243b53}
+.pk{font:700 18px Arial,sans-serif;fill:#087f68}
+.link{fill:none;stroke:#55738f;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+.rel{fill:#fff;stroke:#55738f;stroke-width:2}
+.reltext{font:700 18px Arial,sans-serif;fill:#16324f}
+.card{font:16px Arial,sans-serif;fill:#52677f}
+.mult{font:700 18px Arial,sans-serif;fill:#087f68}
+</style>
+</defs>
+<!-- Relacionamentos -->
+<path class="link" d="M510 330 C625 330 680 470 800 520"/>
+<path class="link" d="M510 770 C635 770 680 690 800 660"/>
+<path class="link" d="M1490 330 C1370 330 1340 470 1220 520"/>
+<path class="link" d="M510 420 C640 520 670 1000 800 1080"/>
+<path class="link" d="M510 820 C650 850 670 1020 800 1120"/>
+<path class="link" d="M300 930 C300 1010 300 1040 300 1100"/>
+<!-- Clínica -->
+<g transform="translate(90 190)">
+<rect class="entity" width="420" height="290"/>
+<path class="header" d="M108 0 H402 Q420 0 420 18 V62 H0 V18 Q0 0 18 0 Z"/>
+<text class="htext" x="24" y="40">CLÍNICA</text>
+<text class="pk" x="24" y="100">id_clinica — identificador</text>
+<text class="attr" x="24" y="137">cnpj</text><text class="attr" x="24" y="171">razao_social</text>
+<text class="attr" x="24" y="205">nome_fantasia, cnes</text>
+<text class="attr" x="24" y="239">telefone, email, endereco</text>
+</g>
+<!-- Médico -->
+<g transform="translate(90 640)">
+<rect class="entity" width="420" height="290"/>
+<path class="header" d="M108 0 H402 Q420 0 420 18 V62 H0 V18 Q0 0 18 0 Z"/>
+<text class="htext" x="24" y="40">MÉDICO</text>
+<text class="pk" x="24" y="100">id_medico — identificador</text>
+<text class="attr" x="24" y="137">cpf, crm, nome</text>
+<text class="attr" x="24" y="171">telefone, email</text>
+<text class="attr" x="24" y="205">dt_nascimento</text>
+<text class="card" x="24" y="250">Um médico pode atender consultas e manter contratos</text>
+</g>
+<!-- Especialidade -->
+<g transform="translate(90 1100)">
+<rect class="entity" width="420" height="210"/>
+<path class="header" d="M108 0 H402 Q420 0 420 18 V62 H0 V18 Q0 0 18 0 Z"/>
+<text class="htext" x="24" y="40">ESPECIALIDADE</text>
+<text class="pk" x="24" y="100">id_especialidade — identificador</text>
+<text class="attr" x="24" y="137">nome</text><text class="attr" x="24" y="171">descricao (opcional)</text>
+</g>
+<!-- Consulta -->
+<g transform="translate(800 400)">
+<rect class="entity" width="420" height="370"/>
+<path class="header" d="M108 0 H402 Q420 0 420 18 V62 H0 V18 Q0 0 18 0 Z"/>
+<text class="htext" x="24" y="40">CONSULTA</text>
+<text class="pk" x="24" y="100">id_consulta — identificador</text>
+<text class="attr" x="24" y="137">data_consulta, hora_consulta</text>
+<text class="attr" x="24" y="171">status, valor</text>
+<text class="attr" x="24" y="205">observacoes (opcional)</text>
+<text class="attr" x="24" y="239">motivo (opcional)</text>
+<text class="card" x="24" y="290">Cada consulta referencia uma clínica,</text>
+<text class="card" x="24" y="316">um paciente e um médico.</text>
+</g>
+<!-- Paciente -->
+<g transform="translate(1490 190)">
+<rect class="entity" width="420" height="290"/>
+<path class="header" d="M108 0 H402 Q420 0 420 18 V62 H0 V18 Q0 0 18 0 Z"/>
+<text class="htext" x="24" y="40">PACIENTE</text>
+<text class="pk" x="24" y="100">id_paciente — identificador</text>
+<text class="attr" x="24" y="137">cpf, nome</text>
+<text class="attr" x="24" y="171">dt_nascimento, sexo</text>
+<text class="attr" x="24" y="205">telefone, email</text>
+<text class="attr" x="24" y="239">endereco</text>
+</g>
+<!-- Contrato -->
+<g transform="translate(800 1000)">
+<rect class="entity" width="420" height="360"/>
+<path class="header" d="M108 0 H402 Q420 0 420 18 V62 H0 V18 Q0 0 18 0 Z"/>
+<text class="htext" x="24" y="40">CONTRATO</text>
+<text class="pk" x="24" y="100">id_contrato — identificador</text>
+<text class="attr" x="24" y="137">numero_contrato</text>
+<text class="attr" x="24" y="171">data_inicio, data_fim</text>
+<text class="attr" x="24" y="205">valor, tipo_contrato, status</text>
+<text class="attr" x="24" y="239">observacoes (opcional)</text>
+<text class="card" x="24" y="290">Registra o vínculo de um médico</text>
+<text class="card" x="24" y="316">com uma clínica ao longo do tempo.</text>
+</g>
+<!-- Relacionamento labels -->
+<g><rect class="rel" x="565" y="360" width="190" height="54" rx="14"/><text class="reltext" x="660" y="383" text-anchor="middle">recebe</text><text class="mult" x="660" y="403" text-anchor="middle">1 : N</text></g>
+<g><rect class="rel" x="565" y="730" width="190" height="54" rx="14"/><text class="reltext" x="660" y="753" text-anchor="middle">atende</text><text class="mult" x="660" y="773" text-anchor="middle">1 : N</text></g>
+<g><rect class="rel" x="1240" y="360" width="190" height="54" rx="14"/><text class="reltext" x="1335" y="383" text-anchor="middle">realiza</text><text class="mult" x="1335" y="403" text-anchor="middle">1 : N</text></g>
+<g><rect class="rel" x="610" y="900" width="190" height="54" rx="14"/><text class="reltext" x="705" y="923" text-anchor="middle">vincula</text><text class="mult" x="705" y="943" text-anchor="middle">1 : N</text></g>
+<g><rect class="rel" x="1030" y="960" width="190" height="54" rx="14"/><text class="reltext" x="1125" y="983" text-anchor="middle">formaliza</text><text class="mult" x="1125" y="1003" text-anchor="middle">1 : N</text></g>
+<g><rect class="rel" x="180" y="980" width="240" height="54" rx="14"/><text class="reltext" x="300" y="1003" text-anchor="middle">possui</text><text class="mult" x="300" y="1023" text-anchor="middle">N : N</text></g>
+<text x="80" y="1380" font-family="Arial,sans-serif" font-size="17" fill="#52677f">Nota: a relação N:N entre Médico e Especialidade é implementada no modelo lógico pela tabela associativa medico_especialidade.</text>
+</svg>
